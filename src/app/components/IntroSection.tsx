@@ -23,66 +23,111 @@ const IntroSection = () => {
 
   return (
     <Container onMouseMove={handleMouseMove}>
-      <Title>
-        Frontend <br />
-        Portfolio
-      </Title>
+      <BlurImg src="/img/pimk.png" alt="핑크" />
+      <BlurViolet src="/img/violetblur.png" alt="보라" />
+      <ContentDiv>
+        <Title>
+          Frontend <br />
+          Portfolio
+        </Title>
 
-      <IlluDiv>
-        <Image
-          fill
-          src="/img/girl.png"
-          alt="노트북들고작업하는사진"
-          style={{
-            objectFit: 'cover',
-            transform: `translate(${moveX}px, ${moveY}px)`,
-          }}
-          quality={100}
-        />
-      </IlluDiv>
-
-      <Div>
-        <Btn>Github</Btn>
-        <Btn>Velog</Btn>
-        <Btn className="cv">Download CV</Btn>
-      </Div>
+        <GirlDiv>
+          <Image
+            fill
+            src="/img/girl.png"
+            alt="노트북들고작업하는사진"
+            style={{
+              objectFit: 'cover',
+              transform: `translate(${moveX}px, ${moveY}px)`,
+            }}
+            quality={100}
+          />
+        </GirlDiv>
+        <LapDiv>
+          <Image
+            fill
+            src="/img/laptop.png"
+            alt="노트북사진"
+            style={{
+              objectFit: 'cover',
+              transform: `translate(${moveY}px, ${moveX}px)`,
+            }}
+            quality={100}
+          />
+        </LapDiv>
+        <Div>
+          <Btn>Github</Btn>
+          <Btn>Velog</Btn>
+          <Btn className="cv">Download CV</Btn>
+        </Div>
+      </ContentDiv>
+      <Arrow
+        src={'/img/arrow-down.gif'}
+        alt="아래화살표"
+        onClick={() => moveTo()}
+      />
     </Container>
   )
 }
 
 export default IntroSection
-export const IlluDiv = styled.div`
+const GirlDiv = styled.div`
   position: absolute;
   height: 404px;
   width: 404px;
-  bottom: 0;
-  right: 5%;
+  bottom: -10%;
+  right: 0;
+`
+const LapDiv = styled.div`
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: -30%;
+  left: 0;
 `
 const Container = styled.div`
   height: 100vh;
-  position: relative;
+  // position: relative;
 `
-const Title = styled.h1`
-  text-align: center;
-  position: absolute;
+const ContentDiv = styled.div`
+  max-width: 1350px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`
+const Title = styled.h1`
+  text-align: center;
+  // position: absolute;
+  //top: 50%;
+  // left: 50%;
+  //transform: translate(-50%, -50%);
   font-size: 124px;
   line-height: 170px;
   font-weight: 700;
 `
 const BlurImg = styled.img`
   width: 50%;
-
+  position: absolute;
   &:hover {
     width: 50%;
     transition: all 1s;
   }
-  &.violet {
-    position: absolute;
-    right: 0;
+`
+const BlurViolet = styled.img`
+  width: 50%;
+  position: absolute;
+  &:hover {
+    width: 50%;
+    transition: all 1s;
   }
+  position: absolute;
+  right: 0;
 `
 const Illu = styled.img`
   position: absolute;
@@ -99,10 +144,7 @@ const Illu = styled.img`
   }
 `
 const Div = styled.div`
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translate(-50%);
+  margin-top: 50px;
 `
 
 const Btn = styled.button`
