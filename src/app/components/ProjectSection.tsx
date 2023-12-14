@@ -5,12 +5,12 @@ import ProjectCard from './ProjectCard'
 const projectsData = [
   {
     id: 1,
-    title: '포트폴리오 웹사이트',
-    description: 'Project 1 description',
-    img: '/img/p4.png',
-    tag: ['Next.js', 'TypeScript', 'React'],
-    gitUrl: '/',
-    previewUrl: '/',
+    title: 'BebeMarket 육아커뮤니티 서비스',
+    description: 'Project 3 description',
+    img: '/img/p1.png',
+    tag: ['React', 'recoil'],
+    gitUrl: 'https://github.com/susuje/BebeMarket',
+    previewUrl: 'https://bebemarket.netlify.app/',
   },
   {
     id: 2,
@@ -18,24 +18,24 @@ const projectsData = [
     description: 'Project 2 description',
     img: '/img/p3.png',
     tag: ['React', 'recoil'],
-    gitUrl: '/',
-    previewUrl: '/',
+    gitUrl: 'https://github.com/susuje/openMarket',
+    previewUrl: 'https://play-lab.netlify.app/',
   },
   {
     id: 3,
-    title: 'BebeMarket 육아커뮤니티 서비스',
-    description: 'Project 3 description',
-    img: '/img/p1.png',
-    tag: ['React', 'recoil'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 4,
     title: 'CollectYourThoughts',
     description: 'Project 4 description',
     img: '/img/p2.png',
-    tag: ['TypeScript', 'React'],
+    tag: ['TypeScript', 'React', 'Redux'],
+    gitUrl: 'https://github.com/susuje/CollectYourThoughts',
+    previewUrl: 'https://colyouth.netlify.app/',
+  },
+  {
+    id: 4,
+    title: '포트폴리오 웹사이트',
+    description: 'Project 1 description',
+    img: '/img/p4.png',
+    tag: ['Next.js', 'TypeScript', 'React'],
     gitUrl: '/',
     previewUrl: '/',
   },
@@ -53,6 +53,8 @@ const ProjectSection = () => {
             description={p.description}
             title={p.title}
             tag={p.tag}
+            gitUrl={p.gitUrl}
+            previewUrl={p.previewUrl}
           />
         ))}
       </ProjectsDiv>
