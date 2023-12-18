@@ -100,7 +100,11 @@ const Container = styled.div`
   max-width: 1350px;
   margin: 0 auto;
   margin-top: 50px;
-  padding: 30px;
+  padding: 30px 30px 60px 30px;
+
+  @media screen and (max-width: 1280px) {
+    height: 130vh;
+  }
 
   @media screen and (max-width: 768px) {
     height: 130vh;
@@ -132,6 +136,7 @@ const Hello = styled.h2`
 const LoopDiv = styled.div`
   width: 250px;
   display: inline-block;
+
   @media screen and (max-width: 768px) {
     height: 42px;
   }
@@ -208,7 +213,7 @@ const Arrow = styled.img`
   transform: translateX(-50%);
   width: 60px;
 
-  @media screen and (max-width: 768px) {
-    //position: fixed;
+  @media screen and (max-width: 1280px) {
+    display: none;
   }
 `

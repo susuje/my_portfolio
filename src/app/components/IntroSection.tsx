@@ -12,7 +12,7 @@ const IntroSection = () => {
   const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
     // console.log('hi')
 
-    const x = (window.innerWidth - event.pageX) * 6 * 0.015
+    const x = (window.innerWidth - event.pageX) * 4 * 0.015
     const y = (window.innerHeight - event.pageY) * 3 * 0.025
 
     setMoveX(x)
@@ -82,6 +82,10 @@ const GirlDiv = styled.div`
   width: 404px;
   bottom: -10%;
   right: 0;
+  @media screen and (max-width: 1280px) {
+    height: 330px;
+    width: 330px;
+  }
 
   @media screen and (max-width: 1125px) {
     height: 300px;
@@ -97,6 +101,10 @@ const LapDiv = styled.div`
   width: 300px;
   top: -30%;
   left: 0;
+  @media screen and (max-width: 1280px) {
+    height: 250px;
+    width: 250px;
+  }
   @media screen and (max-width: 1125px) {
     height: 200px;
     width: 200px;
