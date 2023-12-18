@@ -5,6 +5,9 @@ import { useTypewriter } from 'react-simple-typewriter'
 import TabBtn from './TabBtn'
 
 const AboutMeSection = () => {
+  const moveTo = () => {
+    window.scrollTo({ top: window.innerHeight * 2, behavior: 'smooth' })
+  }
   const tabData = [
     {
       title: 'Skills',
@@ -26,10 +29,10 @@ const AboutMeSection = () => {
         <ul>
           <li>
             • 멋쟁이사자처럼 프론트엔드 5기 <br />
-            <span>2023.03 - 2023.07</span>
+            <span>2023.02 - 2023.06</span>
           </li>
           <li>
-            • 프랑스 파리 국립 건축학교 <br />
+            • 프랑스 파리 국립 건축학교 - ENSAPM <br />
             <span>2018.09 - 2022.06</span>
           </li>
         </ul>
@@ -80,6 +83,11 @@ const AboutMeSection = () => {
           협업과 소통을 통해 더 큰 시너지를 이끌어낸다는 것을 알게되었습니다.
         </Content>
       </ContentDiv>
+      <Arrow
+        src={'/img/arrow-down.gif'}
+        alt="아래화살표"
+        onClick={() => moveTo()}
+      />
     </Container>
   )
 }
@@ -87,11 +95,19 @@ const AboutMeSection = () => {
 export default AboutMeSection
 
 const Container = styled.div`
+  position: relative;
   height: 100vh;
   max-width: 1350px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 50px;
   padding: 30px;
+
+  @media screen and (max-width: 768px) {
+    height: 130vh;
+  }
+  @media screen and (max-width: 480px) {
+    height: 150vh;
+  }
 `
 const bounce = keyframes`
   0% {
@@ -108,11 +124,17 @@ const Hello = styled.h2`
   font-size: 42px;
   //font-weight: 600;
   animation: ${bounce} 1s infinite;
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
 `
 
 const LoopDiv = styled.div`
   width: 250px;
   display: inline-block;
+  @media screen and (max-width: 768px) {
+    height: 42px;
+  }
 `
 const H1 = styled.h1`
   display: inline-block;
@@ -125,6 +147,9 @@ const H1 = styled.h1`
   span {
     font-weight: 600;
   }
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
 `
 
 const ContentDiv = styled.div`
@@ -132,6 +157,10 @@ const ContentDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 const Content = styled.div`
   width: 50%;
@@ -142,9 +171,18 @@ const Content = styled.div`
   span {
     font-weight: 600;
   }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 18px;
+  }
 `
 const Skill = styled.div`
   width: 40%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
 `
 const ListDiv = styled.div`
   li {
@@ -157,5 +195,20 @@ const ListDiv = styled.div`
       display: block;
       margin-top: 10px;
     }
+    @media screen and (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+`
+const Arrow = styled.img`
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+
+  @media screen and (max-width: 768px) {
+    //position: fixed;
   }
 `

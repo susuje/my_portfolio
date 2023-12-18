@@ -32,4 +32,7 @@ const Btn = styled.button`
   &.active {
     border-bottom: 7px solid #dee2e6;
   }
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
 `

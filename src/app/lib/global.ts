@@ -57,7 +57,7 @@ const GlobalStyled = createGlobalStyle`
     cursor: pointer;
   }
   img {
-    width: 100%;
+    
     vertical-align: middle;
   }
   svg {

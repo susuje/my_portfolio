@@ -8,6 +8,7 @@ interface Props {
   tag: string[]
   gitUrl: string
   previewUrl: string
+  detail: string
 }
 function ProjectCard({
   img,
@@ -16,9 +17,11 @@ function ProjectCard({
   tag,
   gitUrl,
   previewUrl,
+  detail,
 }: Props) {
   return (
     <Container>
+      <Detail>{detail}</Detail>
       <ImgDiv
         style={{
           background: `url(${img})`,
@@ -72,9 +75,18 @@ const IconDiv = styled.div`
   justify-content: end;
 `
 const Icon = styled.div`
+  z-index: 120;
   p {
     margin-right: 5px;
   }
+`
+const Detail = styled.p`
+  position: absolute;
+  padding: 40px;
+  display: none;
+  color: white;
+  line-height: 28px;
+  font-weight: 500;
 `
 const Container = styled.div`
   //컨테이너 클릭하면 벨로그 글로 가게..?
@@ -86,25 +98,22 @@ const Container = styled.div`
   box-shadow: rgba(60, 64, 67, 0.1) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.1) 0px 2px 6px 2px;
 
-  /* &:hover::after {
+  &:hover::after {
     content: '';
     position: absolute;
     inset: 0;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
     display: block;
     width: 100%;
     height: 100%;
     color: black;
-  } */
+  }
 
-  /* &:hover ${IconDiv} {
-    position: absolute;
-    display: flex;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
+  &:hover ${Detail} {
+    display: block;
+    z-index: 100;
+  }
 `
 
 const ImgDiv = styled.div`

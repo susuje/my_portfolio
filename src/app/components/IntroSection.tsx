@@ -2,6 +2,7 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const IntroSection = () => {
@@ -56,8 +57,12 @@ const IntroSection = () => {
           />
         </LapDiv>
         <Div>
-          <Btn>Github</Btn>
-          <Btn>Velog</Btn>
+          <Link href="https://github.com/susuje">
+            <Btn>Github</Btn>
+          </Link>
+          <Link href="https://velog.io/@kurong">
+            <Btn>Velog</Btn>
+          </Link>
           <Btn className="cv">Download CV</Btn>
         </Div>
       </ContentDiv>
@@ -77,6 +82,14 @@ const GirlDiv = styled.div`
   width: 404px;
   bottom: -10%;
   right: 0;
+
+  @media screen and (max-width: 1125px) {
+    height: 300px;
+    width: 300px;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 const LapDiv = styled.div`
   position: absolute;
@@ -84,6 +97,13 @@ const LapDiv = styled.div`
   width: 300px;
   top: -30%;
   left: 0;
+  @media screen and (max-width: 1125px) {
+    height: 200px;
+    width: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 const Container = styled.div`
   height: 100vh;
@@ -110,6 +130,15 @@ const Title = styled.h1`
   font-size: 124px;
   line-height: 170px;
   font-weight: 700;
+
+  @media screen and (max-width: 1125px) {
+    font-size: 82px;
+    line-height: 120px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 62px;
+    line-height: 100px;
+  }
 `
 const BlurImg = styled.img`
   width: 50%;
@@ -117,6 +146,12 @@ const BlurImg = styled.img`
   &:hover {
     width: 50%;
     transition: all 1s;
+  }
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 480px) {
+    display: none;
   }
 `
 const BlurViolet = styled.img`
@@ -128,6 +163,13 @@ const BlurViolet = styled.img`
   }
   position: absolute;
   right: 0;
+
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `
 const Illu = styled.img`
   position: absolute;
@@ -145,6 +187,11 @@ const Illu = styled.img`
 `
 const Div = styled.div`
   margin-top: 50px;
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const Btn = styled.button`
@@ -157,6 +204,12 @@ const Btn = styled.button`
   &.cv {
     background-color: black;
     color: white;
+  }
+  @media screen and (max-width: 480px) {
+    margin-bottom: 20px;
+    &.cv {
+      margin-bottom: 0px;
+    }
   }
 `
 
