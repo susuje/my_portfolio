@@ -63,7 +63,9 @@ const IntroSection = () => {
           <Link href="https://velog.io/@kurong">
             <Btn>Velog</Btn>
           </Link>
-          <Btn className="cv">Download CV</Btn>
+          <a href="/CV.pdf">
+            <Btn className="cv">Download CV</Btn>
+          </a>
         </Div>
       </ContentDiv>
       <Arrow

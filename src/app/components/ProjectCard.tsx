@@ -89,7 +89,6 @@ const Detail = styled.p`
   font-weight: 500;
 `
 const Container = styled.div`
-  //컨테이너 클릭하면 벨로그 글로 가게..?
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -103,7 +102,7 @@ const Container = styled.div`
     position: absolute;
     inset: 0;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     display: block;
     width: 100%;
     height: 100%;
