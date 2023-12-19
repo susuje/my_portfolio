@@ -106,6 +106,9 @@ const Container = styled.div`
   margin: 0 auto;
   position: relative;
   padding: 0 30px 80px 30px;
+  @media screen and (max-width: 480px) {
+    padding-top: 130px;
+  }
 `
 
 const H2 = styled.h2`

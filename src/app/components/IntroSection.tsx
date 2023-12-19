@@ -198,6 +198,7 @@ const Illu = styled.img`
 const Div = styled.div`
   margin-top: 50px;
   @media screen and (max-width: 480px) {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
